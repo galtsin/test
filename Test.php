@@ -98,3 +98,18 @@ class DataProviderManager implements DataProviderInterface
     }
 }
 ?>
+
+<?php
+
+$request = array('param' => 'value');
+$config = array('host', 'user', 'password');
+
+$dm = new DataProviderManager(
+    new SourceXProvider($config),
+    $cache,
+    $logger
+);
+
+$response = $dm->get($request);
+
+?>
